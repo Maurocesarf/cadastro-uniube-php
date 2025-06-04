@@ -26,6 +26,18 @@ if(isset($_POST['nome'])){
 }
 ?>
 
+<!-- Formulario de edicao -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mauro 1166101</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Formulario de editar produtos cadastrados, segue o mesmo padrao de estilo do formulario de cadastro -->
 <h2>Editar Produto</h2>
 <form method="POST">
     <input type="hidden" name="id" value="<?php echo $produto['id']; ?>">
@@ -34,3 +46,6 @@ if(isset($_POST['nome'])){
     <input type="number" step="0.01" name="preco" value="<?php echo $produto['preco']; ?>" required>
     <button type="submit">Salvar</button>
 </form>
+
+</body>
+</html>

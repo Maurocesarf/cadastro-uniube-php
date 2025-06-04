@@ -8,8 +8,17 @@ $resultado = $conexao->query("SELECT * FROM produtos");
 // form principal para adicionar, editar ou excluir registros de produtos do banco
 ?>
 
-<link rel="stylesheet" href="style.css">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mauro 1166101</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
+<!-- Formulario de cadastro de produtos -->
 <h1>Cadastro de Produtos Uniube</h1>
 
 <h2>Adicionar Novo Produto</h2>
@@ -22,12 +31,16 @@ $resultado = $conexao->query("SELECT * FROM produtos");
 
 <h2>Produtos Cadastrados</h2>
 
+</body>
+</html>
+
+<!-- bloco para exibicao dos produtos ja cadastrados -->
 <?php while($produto = $resultado->fetch_assoc()): ?>
     <div class="produto">
         <strong><?php echo $produto['nome']; ?></strong><br>
         <?php echo $produto['descricao']; ?><br>
         Preço: R$ <?php echo $produto['preco']; ?><br>
         <a href="edit.php?id=<?php echo $produto['id']; ?>">Editar</a> | 
-        <a href="delete.php?id=<?php echo $produto['id']; ?>" onclick="return confirm('Deseja mesmo exluir o registro?');">Excluir</a>
+        <a href="delete.php?id=<?php echo $produto['id']; ?>" onclick="return confirm('Deseja mesmo excluir o registro?');">Excluir</a>
     </div>
 <?php endwhile; ?>

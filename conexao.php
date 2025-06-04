@@ -4,7 +4,7 @@
 $servidor = "localhost";
 $usuario = "root";
 $senha = "";
-$banco = "sistema_produtos";
+$banco = "cadastro_produtos";
 
 // cria conexao com o banco de dados
 $conexao = new mysqli($servidor, $usuario, $senha, $banco);
