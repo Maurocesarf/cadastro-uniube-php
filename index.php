@@ -29,18 +29,21 @@ $resultado = $conexao->query("SELECT * FROM produtos");
     <button type="submit">Cadastrar</button>
 </form>
 
+<div class="linha"></div>
+
+<!-- bloco para exibicao dos produtos ja cadastrados -->
 <h2>Produtos Cadastrados</h2>
+
+<?php while($produto = $resultado->fetch_assoc()): ?>
+    <div class="produto">
+        <strong class="nome_prod"><?php echo $produto['nome']; ?></strong><br><br>
+        <strong>Descrição:</strong><br>
+        <?php echo $produto['descricao']; ?><br><br>
+        <strong>Preço:</strong> R$ <?php echo $produto['preco']; ?><br><br>
+        <a href="edit.php?id=<?php echo $produto['id']; ?>" class="editar" >Editar</a> | 
+        <a href="delete.php?id=<?php echo $produto['id']; ?>" onclick="return confirm('Deseja mesmo excluir o registro?');" class="excluir" >Excluir</a>
+    </div>
+<?php endwhile; ?>
 
 </body>
 </html>
-
-<!-- bloco para exibicao dos produtos ja cadastrados -->
-<?php while($produto = $resultado->fetch_assoc()): ?>
-    <div class="produto">
-        <strong><?php echo $produto['nome']; ?></strong><br>
-        <?php echo $produto['descricao']; ?><br>
-        Preço: R$ <?php echo $produto['preco']; ?><br>
-        <a href="edit.php?id=<?php echo $produto['id']; ?>">Editar</a> | 
-        <a href="delete.php?id=<?php echo $produto['id']; ?>" onclick="return confirm('Deseja mesmo excluir o registro?');">Excluir</a>
-    </div>
-<?php endwhile; ?>

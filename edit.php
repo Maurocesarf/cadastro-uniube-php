@@ -44,7 +44,7 @@ if(isset($_POST['nome'])){
     <input type="text" name="nome" value="<?php echo $produto['nome']; ?>" required>
     <textarea name="descricao" required><?php echo $produto['descricao']; ?></textarea>
     <input type="number" step="0.01" name="preco" value="<?php echo $produto['preco']; ?>" required>
-    <button type="submit">Salvar</button>
+    <button type="submit">Salvar alteração</button>
 </form>
 
 </body>

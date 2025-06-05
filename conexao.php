@@ -3,7 +3,7 @@
 // variaves de acesso ao banco
 $servidor = "localhost";
 $usuario = "root";
-$senha = "";
+$senha = ""; // retirei a senha para nao envia-la no projeto
 $banco = "cadastro_produtos";
 
 // cria conexao com o banco de dados
